@@ -1,0 +1,34 @@
+<div class="bidder-form">
+<% form_for(@user) do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset>
+  <legend>Enter User Details</legend>
+  
+  <p>
+    <label for="name">Name:</label>
+    <%= f.text_field :name ,:size => 40 %>
+  </p>
+  <p>
+    <label for="password">Password:</label>
+    <%= f.password_field :password , :size => 40 %>
+  </p>
+  <p>
+    <label for="password_confirmation">Confirm:</label>
+    <%= f.password_field :password_confirmation , :size => 40 %>
+  </p>
+  <p>
+    <label for="role">Role:</label>
+    <%= f.radio_button :role, "Master" %> Master
+    <%= f.radio_button :role, "Vendedor" %> Vendedor
+    <%= f.radio_button :role, "Comprador"  %> Comprador
+    <%= f.radio_button  :role, "Vendedor/Comprador" %> Vendedor/Comprador
+  </p>
+
+  <p>
+    <%= f.submit "Add User", :class => "submit" %>
+  </p>
+
+  </fieldset>
+<% end %>
+</div>
